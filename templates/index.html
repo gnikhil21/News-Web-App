@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>News App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div style="background-color:white;">
+        <div class="jumbotron" style=" background-color:blanchedalmond" >
+            <h1><center>Get The latest News</center></h1>      
+        </div>
+        
+        <div>
+            {% include 'bar.html' %}
+        </div>
+
+        <div class="container" id="articles-container">
+            {% for i in data %}
+            <div class="card mb-3 box" style="max-width: 800px; margin:auto;">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            
+                            <h5 class="card-title"><a href="{{i.url}}" target="_blanck">{{i.title}}</a></h5> 
+                            <p class="card-text">{{i.des}}</p>
+                            
+                        </div>
+                    </div>
+    
+                    <div class="col-md-4 img-box">
+                        <img src="{{i.img}}" class="card-img" alt="..." height="100%">
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <h1 id="loading">Loading....</h1>
+    </div>
+
+</body>
+
+</html>
+{% endblock %}

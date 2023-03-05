@@ -70,7 +70,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'news.wsgi.application'
 
-APIKEY = '96a9fee039e743978cafbf778a2810ed'
+#APIKEY = '96a9fee039e743978cafbf778a2810ed'
+gAPIKEY = '61bb5c52b5ebd495204e647dac35f8d2'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
